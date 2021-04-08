@@ -1,0 +1,90 @@
+{
+  "tag": "MAL",
+  "focus_id": "malta",
+  "namespace": "malta",
+  "focus_name_file": "malta",
+  "event_name_file": "malta",
+  "continuous_focus_position_x": 100,
+  "continuous_focus_position_y": 100,
+  "indent": 4,
+
+  "focus": {
+    "Test": {
+      "id": "TEST_FOCUS",
+      "cost": 70,
+      "icon": null,
+      "x": 5,
+      "y": 5,
+      "ai_factor": 1,
+      "prerequisite": null
+    },
+    "Test1": {
+      "id": "TEST_FOCUS1",
+      "cost": 70,
+      "icon": null,
+      "x": 3,
+      "y": 6,
+      "ai_factor": 1,
+      "prerequisite": {
+        "1": "TEST_FOCUS"
+      }
+    },
+    "Test2": {
+      "id": "TEST_FOCUS2",
+      "cost": 70,
+      "icon": null,
+      "x": 7,
+      "y": 7,
+      "ai_factor": 2,
+      "prerequisite": {
+        "1": "TEST_FOCUS"
+      }
+    },
+    "Test3": {
+      "id": "TEST_FOCUS3",
+      "cost": 70,
+      "icon": null,
+      "x": 7,
+      "y": 7,
+      "ai_factor": 20,
+      "prerequisite": {
+        "1": {
+          "1": "TEST_FOCUS1"
+        },
+        "2": {
+          "1": "TEST_FOCUS2"
+        }
+      }
+    }
+  },
+
+  "events": {
+    "Test": {
+      "event_type": "country",
+      "id": 1,
+      "picture": null,
+      "hidden": false,
+      "is_triggered_only": true,
+      "fire_only_once": null,
+      "mean_time_to_happen": null,
+      "immediate": null,
+      "options": {
+        "Annex Germany": {
+          "id": "a",
+          "add_trigger": false,
+          "ai_factor": 50
+        },
+        "Annex France": {
+          "id": "b",
+          "add_trigger": true,
+          "ai_factor": 25
+        },
+        "Annex Italy": {
+          "id": "c",
+          "add_trigger": false,
+          "ai_factor": 25
+        }
+      }
+    }
+  }
+}
